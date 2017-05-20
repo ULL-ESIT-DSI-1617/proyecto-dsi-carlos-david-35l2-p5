@@ -22,4 +22,8 @@ proyecto-dsi-carlos-david-35l2-p5 created by GitHub Classroom
 - JSDoc
 - NPM, Módulos
 - Base de datos
+<<<<<<< HEAD
 - LocalStorage.
+=======
+- LocalStorag
+>>>>>>> Desarrollo_David
