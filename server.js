@@ -1,59 +1,125 @@
-var express = require("express"),
-    // mongoose = require("mongoose"),
-    app = express();
-// var bodyParser = require('body-parser');
+var http = require('http'),
+    express = require('express'),
+    app = express(),
+    sqlite3 = require('sqlite3').verbose(),
+    bodyParser = require('body-parser'),
+    db = new sqlite3.Database('docs/anonymous.db');
 
 app.use(express.static(__dirname + "/docs"));
 
-/*
-app.use(express.bodyParser());
+// Indicamos a express que vamos a usar Jade para renderizas los templates
+app.set('views', __dirname + '/docs/views');
+app.engine('.html', require('jade').__express);
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-app.use(bodyParser.raw());
-*/
+// Permitir a express recibir datos desde el post
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
-// connect to the amazeriffic data store in mongo
-// mongoose.connect('mongodb://localhost/amazeriffic');
-
-// This is our mongoose model for todos
-/*
-var ToDoSchema = mongoose.Schema({
-    description: String,
-    tags: [ String ]
-});
-
-var ToDo = mongoose.model("ToDo", ToDoSchema);
-
-
-app.get("/todos.json", function (req, res) {
-    ToDo.find({}, function (err, toDos) { res.json(toDos); });
-});
-
-app.post("/todos", function (req, res) {
-    console.log(req.body);
-    var newToDo = new ToDo({"description":req.body.description, "tags":req.body.tags});
-    newToDo.save(function (err, result) {
-      if (err !== null) {
-          // the element did not get saved!
-          console.log(err);
-          res.send("ERROR");
-      } else {
-          // our client expects *all* of the todo items to be returned, so we'll do
-          // an additional request to maintain compatibility
-          ToDo.find({}, function (err, result) {
-        if (err !== null) {
-            // the element did not get saved!
-            res.send("ERROR");
-        }
-        res.json(result);
-          });
+// Database initialization
+db.get("SELECT name FROM sqlite_master WHERE type='table' AND name='t_usuarios'", function(err, rows) {
+  if(err !== null) {
+    console.log(err);
+  }
+  else if(rows === undefined) {
+    db.run('CREATE TABLE "t_usuarios" ' +
+           '("id" INTEGER PRIMARY KEY AUTOINCREMENT, ' +
+           '"email" VARCHAR(50), ' +
+           '"username" VARCHAR(25), ' +
+           '"password" VARCHAR(50))', function(err) {
+      if(err !== null) {
+        console.log(err);
+      }
+      else {
+        console.log("Creada la tabla t_usuarios");
       }
     });
+  }
+  else {
+    console.log("Fallo al crear la tabla t_usuarios");
+  }
 });
-*/
 
-app.set('port', (process.env.PORT || 8080));
-app.listen(app.get('port'), function() {
-  console.log("La aplicación Node esta corriendo en el puerto:" + app.get('port'));
+// We render the templates with the data
+app.get('/', function(req, res) {
+
+  db.all('SELECT * FROM t_usuarios ORDER BY id', function(err, row) {
+    if(err !== null) {
+      res.status(500).send("Ocurrio el error: " + err)
+    }
+    else {
+      console.log(row);
+      res.render('index.jade', {title: 'index'});
+    }
+  });
+});
+
+app.get('/login', function(req, res) {
+
+  db.all('SELECT * FROM t_usuarios ORDER BY id', function(err, row) {
+    if(err !== null) {
+      res.status(500).send("Ocurrio el error: " + err)
+    }
+    else {
+      console.log(row);
+      res.render('login.jade', {t_usuarios: row}, function(err, html) {
+        res.send(200, html);
+      });
+    }
+  });
+});
+
+app.get('/registrarse', function(req, res) {
+
+  db.all('SELECT * FROM t_usuarios ORDER BY id', function(err, row) {
+    if(err !== null) {
+      res.status(500).send("Ocurrio el error: " + err)
+    }
+    else {
+      console.log(row);
+      res.render('registrarse.jade', {t_usuarios: row}, function(err, html) {
+        res.send(200, html);
+      });
+    }
+  });
+});
+
+// We define a new route that will handle bookmark creation
+app.post('/add', function(req, res) {
+  console.log("Entro en el post/add")
+  email = req.body.email;
+  username = req.body.username;
+  password = req.body.password;
+
+  sqlRequest = "INSERT INTO 't_usuarios' (email, username, password) " +
+               "VALUES('" + email + "', '" + username + "', '" + password + "')"
+  db.run(sqlRequest, function(err) {
+    if(err !== null) {
+      //next(err);
+      res.status(500).send("Ocurrio el error: " + err)
+    }
+    else {
+      res.redirect('back');
+    }
+  });
+});
+
+// We define another route that will handle bookmark deletion
+app.get('/delete/:id', function(req, res, next) {
+  db.run("DELETE FROM t_usuarios WHERE id='" + req.params.id + "'",
+         function(err) {
+    if(err !== null) {
+      next(err);
+    }
+    else {
+      res.redirect('back');
+    }
+  });
+});
+
+var port = process.env.PORT || 8081;
+var host = process.env.HOST || "127.0.0.1";
+
+app.listen(port, function() {
+  console.log("La aplicación Node esta corriendo en el puerto:", host, port, app.get('env'));
 });
