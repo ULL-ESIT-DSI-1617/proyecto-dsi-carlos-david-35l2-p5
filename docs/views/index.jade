@@ -1,0 +1,226 @@
+doctype html
+html(lang='en')
+  head
+    // Title
+    title Anonymous Pictures
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+    meta(charset='UTF-8')
+    meta(name='description', content='Proyecto final DSI ')
+    meta(name='keywords', content='fotografia,pictures')
+    meta(name='author', content='Carlos Fernandez Donate / David Dorta Acosta')
+    // Styles
+    link(type='text/css', rel='stylesheet', href='assets/plugins/materialize/css/materialize.min.css')
+    link(href='http://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+    link(href='assets/plugins/metrojs/MetroJs.min.css', rel='stylesheet')
+    link(href='assets/plugins/weather-icons-master/css/weather-icons.min.css', rel='stylesheet')
+    // Theme Styles
+    link(href='assets/css/alpha.min.css', rel='stylesheet', type='text/css')
+    link(href='assets/css/custom.css', rel='stylesheet', type='text/css')
+  body
+    .loader
+      .preloader-wrapper.big.active
+        .spinner-layer.spinner-blue
+          .circle-clipper.left
+            .circle
+          .gap-patch
+            .circle
+          .circle-clipper.right
+            .circle
+        .spinner-layer.spinner-teal.lighten-1
+          .circle-clipper.left
+            .circle
+          .gap-patch
+            .circle
+          .circle-clipper.right
+            .circle
+        .spinner-layer.spinner-yellow
+          .circle-clipper.left
+            .circle
+          .gap-patch
+            .circle
+          .circle-clipper.right
+            .circle
+        .spinner-layer.spinner-green
+          .circle-clipper.left
+            .circle
+          .gap-patch
+            .circle
+          .circle-clipper.right
+            .circle
+    .mn-content.fixed-sidebar
+      header.mn-header.navbar-fixed
+        nav.teal.lighten-1
+          .nav-wrapper.row
+            section.material-design-hamburger.navigation-toggle
+              a.button-collapse.show-on-large.material-design-hamburger__icon(href='javascript:void(0)', data-activates='slide-out')
+                span.material-design-hamburger__layer
+            a(href='index.html')
+              .header-title.col.s3.m3
+                span.chapter-title Anonymous Pictures
+            ul.right.col.s9.m3.nav-right-menu
+              li
+                a.chat-button.show-on-large(href='javascript:void(0)', data-activates='chat-sidebar')
+                  i.material-icons power_settings_new
+      aside#slide-out.side-nav.white.fixed
+        .side-nav-wrapper
+          // logo
+          img.responsive-img(src='assets/images/logo.png', alt='')
+          // Menu lateral izquierdo
+          ul.sidebar-menu.collapsible.collapsible-accordion(data-collapsible='accordion')
+            li.no-padding.active
+              a.waves-effect.waves-grey.active(href='#')
+                i.material-icons perm_media
+                | INICIO
+            li.no-padding
+            li.no-padding.active
+              a.waves-effect.waves-grey.active(href='/login')
+                i.material-icons person_pin
+                | login
+            li.no-padding
+            li.no-padding.active
+              a.waves-effect.waves-grey.active(href='registrarse')
+                i.material-icons input
+                | crear cuenta
+            li.no-padding
+          .footer
+            p.copyright
+              | © 2017
+              br
+              | Carlos Fernandez
+              br
+              |  David Dorta
+            a(href='index.html#!') Privacy
+            |  &
+            a(href='index.html#!') Terms
+      main.mn-inner.inner-active-sidebar
+        // Contenedor del cuerpo de la pagina
+        .middle-content
+          .row
+            .col.m5.m1
+              .card
+                .card-image.waves-effect.waves-block.waves-light
+                  img.activator(src='assets/images/photo_4.jpg')
+                .card-content
+                  span.card-title.activator.grey-text.text-darken-4
+                    | Titulo
+                    i.material-icons.right more_vert
+                .card-reveal
+                  span.card-title.grey-text.text-darken-4
+                    | Comentarios:
+                    i.material-icons.right close
+                  p Se el primero en comentar.
+            .col.m6.m1
+              .card
+                .card-image.waves-effect.waves-block.waves-light
+                  img.activator(src='assets/images/photo_8.jpg')
+                .card-content
+                  span.card-title.activator.grey-text.text-darken-4
+                    | Titulo
+                    i.material-icons.right more_vert
+                .card-reveal
+                  span.card-title.grey-text.text-darken-4
+                    | Comentarios:
+                    i.material-icons.right close
+                  p Se el primero en comentar.
+          .row
+            .col.m6.m1
+              .card
+                .card-image.waves-effect.waves-block.waves-light
+                  img.activator(src='assets/images/photo_6.jpg')
+                .card-content
+                  span.card-title.activator.grey-text.text-darken-4
+                    | Titulo
+                    i.material-icons.right more_vert
+                .card-reveal
+                  span.card-title.grey-text.text-darken-4
+                    | Comentarios:
+                    i.material-icons.right close
+                  p Se el primero en comentar.
+            .col.m6.m1
+              .card
+                .card-image.waves-effect.waves-block.waves-light
+                  img.activator(src='assets/images/photo_7.jpg')
+                .card-content
+                  span.card-title.activator.grey-text.text-darken-4
+                    | Titulo
+                    i.material-icons.right more_vert
+                .card-reveal
+                  span.card-title.grey-text.text-darken-4
+                    | Comentarios:
+                    i.material-icons.right close
+                  p Se el primero en comentar.
+          .row
+            .col.m6.m1
+              .card
+                .card-image.waves-effect.waves-block.waves-light
+                  img.activator(src='assets/images/photo_1.jpg')
+                .card-content
+                  span.card-title.activator.grey-text.text-darken-4
+                    | Titulo
+                    i.material-icons.right more_vert
+                .card-reveal
+                  span.card-title.grey-text.text-darken-4
+                    | Comentarios:
+                    i.material-icons.right close
+                  p Se el primero en comentar.
+            .col.m5.m1
+              .card
+                .card-image.waves-effect.waves-block.waves-light
+                  img.activator(src='assets/images/photo_2.jpg')
+                .card-content
+                  span.card-title.activator.grey-text.text-darken-4
+                    | Titulo
+                    i.material-icons.right more_vert
+                .card-reveal
+                  span.card-title.grey-text.text-darken-4
+                    | Comentarios:
+                    i.material-icons.right close
+                  p Se el primero en comentar.
+          .row
+            .col.m5.m1
+              .card
+                .card-image.waves-effect.waves-block.waves-light
+                  img.activator(src='assets/images/photo_3.jpg')
+                .card-content
+                  span.card-title.activator.grey-text.text-darken-4
+                    | Titulo
+                    i.material-icons.right more_vert
+                .card-reveal
+                  span.card-title.grey-text.text-darken-4
+                    | Comentarios:
+                    i.material-icons.right close
+                  p Se el primero en comentar.
+            .col.m7.m1
+              .card
+                .card-image.waves-effect.waves-block.waves-light
+                  img.activator(src='assets/images/photo_5.jpg')
+                .card-content
+                  span.card-title.activator.grey-text.text-darken-4
+                    | Titulo
+                    i.material-icons.right more_vert
+                .card-reveal
+                  span.card-title.grey-text.text-darken-4
+                    | Comentarios:
+                    i.material-icons.right close
+                  p Se el primero en comentar.
+      // Contenedor del footer
+      .page-footer
+    .left-sidebar-hover
+    // Javascripts
+    script(src='assets/plugins/jquery/jquery-2.2.0.min.js')
+    script(src='assets/plugins/materialize/js/materialize.min.js')
+    script(src='assets/plugins/material-preloader/js/materialPreloader.min.js')
+    script(src='assets/plugins/jquery-blockui/jquery.blockui.js')
+    script(src='assets/plugins/waypoints/jquery.waypoints.min.js')
+    script(src='assets/plugins/counter-up-master/jquery.counterup.min.js')
+    script(src='assets/plugins/jquery-sparkline/jquery.sparkline.min.js')
+    script(src='assets/plugins/chart.js/chart.min.js')
+    script(src='assets/plugins/flot/jquery.flot.min.js')
+    script(src='assets/plugins/flot/jquery.flot.time.min.js')
+    script(src='assets/plugins/flot/jquery.flot.symbol.min.js')
+    script(src='assets/plugins/flot/jquery.flot.resize.min.js')
+    script(src='assets/plugins/flot/jquery.flot.tooltip.min.js')
+    script(src='assets/plugins/curvedlines/curvedLines.js')
+    script(src='assets/plugins/peity/jquery.peity.min.js')
+    script(src='assets/js/alpha.min.js')
+    script(src='assets/js/pages/dashboard.js')
