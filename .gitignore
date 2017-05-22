@@ -1,0 +1,7 @@
+node_modules/
+gh-pages/
+wiki/
+.DS_Store
+Icon
+Icon?
+.log
