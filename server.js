@@ -109,28 +109,17 @@ app.post('/add', function(req, res) {
 
 // Definimos una ruta para hacer el login de usuarios
 app.post('/login', function(req, res) {
-  console.log("Entro en el post/login")
-  username = req.body.username;
-  password = req.body.password;
-  console.log("Username: " + username)
-
-  //sqlUsername = db.run("SELECT * FROM 't_usuarios' WHERE username = '$username'");
-  //sqlPassword = "SELECT * FROM 't_usuarios' WHERE password = '$password'";
-  db.each("SELECT * FROM t_usuarios WHERE username='" + req.body.username + "'", function(err, row) {
-    if(err !== null) {
-      next(err);
-    }
-    else if (username == row.username) {
-      console.log("sqlUsername_db: " + row.username)
-      res.render('index_login.jade', {title: 'index_login'});
-    }
-    else if (username != row.username) {
-      console.log("Usuario no encontrado")
-    }
-  });
-  //console.log("sqlUsername 2: " + $sqlUsername)
-//  if (username == sqlUsername)
-//    res.render('index_login.jade', {title: 'index_login'})
+  sqlUsername = db.prepare("SELECT username FROM t_usuarios WHERE username='" + req.body.username + "' and password='" + req.body.password + "'");
+  sqlUsername.get(function(err, row){
+      if(err)
+          throw err;
+      else
+          if(row)
+              res.render('index_login.jade', {title: "index_login"})
+          else
+            console.log("Usuario no encontrado")
+            res.render('login_error.jade', {title: "login_error"})
+      });
 });
 
 // We define another route that will handle bookmark deletion
