@@ -1,6 +1,7 @@
 doctype html
 html(lang='en')
   head
+    link(rel='shortcut icon', type='image/png', href='assets/images/favicon-32x32.png')
     // Title
     title Anonymous Pictures
     meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
@@ -55,7 +56,7 @@ html(lang='en')
             section.material-design-hamburger.navigation-toggle
               a.button-collapse.show-on-large.material-design-hamburger__icon(href='javascript:void(0)', data-activates='slide-out')
                 span.material-design-hamburger__layer
-            a(href='/')
+            a(href='index.html')
               .header-title.col.s3.m3
                 span.chapter-title Anonymous Pictures
             //
@@ -70,7 +71,7 @@ html(lang='en')
           // Menu lateral izquierdo
           ul.sidebar-menu.collapsible.collapsible-accordion(data-collapsible='accordion')
             li.no-padding.active
-              a.waves-effect.waves-grey.active(href='/')
+              a.waves-effect.waves-grey.active(href='index.html')
                 i.material-icons perm_media
                 | INICIO
             li.no-padding
@@ -80,7 +81,7 @@ html(lang='en')
                 | login
             li.no-padding
             li.no-padding.active
-              a.waves-effect.waves-grey.active(href='registrarse')
+              a.waves-effect.waves-grey.active(href='registrarse.html')
                 i.material-icons input
                 | crear cuenta
             li.no-padding
@@ -91,9 +92,9 @@ html(lang='en')
               | Carlos Fernandez
               br
               |  David Dorta
-            a(href='/#!') Privacy
+            a(href='index.html#!') Privacy
             |  &
-            a(href='/#!') Terms
+            a(href='index.html#!') Terms
       main.mn-inner.inner-active-sidebar
         // Contenedor del cuerpo de la pagina
         .middle-content
@@ -103,22 +104,20 @@ html(lang='en')
                 img(src='https://images.unsplash.com/photo-1464817739973-0128fe77aaa1?dpr=1&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=')
                 // random image
                 .caption.center-align
-                  form(action="login", method="post")
-                    .group
-                      input(type='text', name='username')
-                      span.highlight
-                      span.bar
-                      label
-                        i.material-icons perm_identity
-                        | Usuario
-                    .group
-                      input(type='password', name='password')
-                      span.highlight
-                      span.bar
-                      label
-                        i.material-icons unlock
-                        | Contraseña
-                    button.button.buttonBlue(type='submit')
+                  form
+                    .row
+                      .input-field.col.s8
+                        input#user.validate(type='text')
+                        label(for='user')
+                          i.material-icons perm_identity
+                          | Usuario
+                    .row
+                      .input-field.col.s8
+                        input#password.validate(type='password')
+                        label(for='password')
+                          i.material-icons unlock
+                          | Contraseña
+                    button.button.buttonBlue(type='button')
                       | login
                       .ripples.buttonRipples
                         span.ripplesCircle

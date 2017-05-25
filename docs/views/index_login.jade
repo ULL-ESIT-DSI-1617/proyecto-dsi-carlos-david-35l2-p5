@@ -1,6 +1,7 @@
 doctype html
 html(lang='en')
   head
+    link(rel='shortcut icon', type='image/png', href='assets/images/favicon-32x32.png')
     // Title
     title Anonymous Pictures
     meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
@@ -54,13 +55,20 @@ html(lang='en')
             section.material-design-hamburger.navigation-toggle
               a.button-collapse.show-on-large.material-design-hamburger__icon(href='javascript:void(0)', data-activates='slide-out')
                 span.material-design-hamburger__layer
-            a(href='/')
+            a(href='index.html')
               .header-title.col.s3.m3
                 span.chapter-title Anonymous Pictures
             ul.right.col.s9.m3.nav-right-menu
               li
                 a.chat-button.show-on-large(href='javascript:void(0)', data-activates='chat-sidebar')
                   i.material-icons power_settings_new
+            form(action='#')
+              .file-field.input-field
+                .btn
+                  span Subir foto
+                  input(type='file')
+                .file-path-wrapper
+                  input.file-path.validate(type='text')
       aside#slide-out.side-nav.white.fixed
         .side-nav-wrapper
           // logo
@@ -73,12 +81,12 @@ html(lang='en')
                 | INICIO
             li.no-padding
             li.no-padding.active
-              a.waves-effect.waves-grey.active(href='/login')
+              a.waves-effect.waves-grey.active(href='login.html')
                 i.material-icons person_pin
                 | login
             li.no-padding
             li.no-padding.active
-              a.waves-effect.waves-grey.active(href='registrarse')
+              a.waves-effect.waves-grey.active(href='registrarse.html')
                 i.material-icons input
                 | crear cuenta
             li.no-padding
@@ -88,10 +96,10 @@ html(lang='en')
               br
               | Carlos Fernandez
               br
-              |  David Dorta Acosta
-            a(href='/#!') Privacy
+              |  David Dorta
+            a(href='index.html#!') Privacy
             |  &
-            a(href='/#!') Terms
+            a(href='index.html#!') Terms
       main.mn-inner.inner-active-sidebar
         // Contenedor del cuerpo de la pagina
         .middle-content
@@ -109,6 +117,14 @@ html(lang='en')
                     | Comentarios:
                     i.material-icons.right close
                   p Se el primero en comentar.
+                  form.col.s12
+                    .row
+                      .input-field.col.s12
+                        textarea#comentario.materialize-textarea(data-length='300')
+                        label(for='comentario') Textarea
+                    button.btn.waves-effect.waves-light(type='submit', name='action')
+                      | Comentar
+                      i.material-icons.right send
             .col.m6.m1
               .card
                 .card-image.waves-effect.waves-block.waves-light
@@ -122,6 +138,14 @@ html(lang='en')
                     | Comentarios:
                     i.material-icons.right close
                   p Se el primero en comentar.
+                  form.col.s12
+                    .row
+                      .input-field.col.s12
+                        textarea#comentario.materialize-textarea(data-length='300')
+                        label(for='comentario') Textarea
+                    button.btn.waves-effect.waves-light(type='submit', name='action')
+                      | Comentar
+                      i.material-icons.right send
           .row
             .col.m6.m1
               .card
@@ -136,6 +160,14 @@ html(lang='en')
                     | Comentarios:
                     i.material-icons.right close
                   p Se el primero en comentar.
+                  form.col.s12
+                    .row
+                      .input-field.col.s12
+                        textarea#comentario.materialize-textarea(data-length='300')
+                        label(for='comentario') Textarea
+                    button.btn.waves-effect.waves-light(type='submit', name='action')
+                      | Comentar
+                      i.material-icons.right send
             .col.m6.m1
               .card
                 .card-image.waves-effect.waves-block.waves-light
@@ -149,6 +181,14 @@ html(lang='en')
                     | Comentarios:
                     i.material-icons.right close
                   p Se el primero en comentar.
+                  form.col.s12
+                    .row
+                      .input-field.col.s12
+                        textarea#comentario.materialize-textarea(data-length='300')
+                        label(for='comentario') Textarea
+                    button.btn.waves-effect.waves-light(type='submit', name='action')
+                      | Comentar
+                      i.material-icons.right send
           .row
             .col.m6.m1
               .card
@@ -163,6 +203,14 @@ html(lang='en')
                     | Comentarios:
                     i.material-icons.right close
                   p Se el primero en comentar.
+                  form.col.s12
+                    .row
+                      .input-field.col.s12
+                        textarea#comentario.materialize-textarea(data-length='300')
+                        label(for='comentario') Textarea
+                    button.btn.waves-effect.waves-light(type='submit', name='action')
+                      | Comentar
+                      i.material-icons.right send
             .col.m5.m1
               .card
                 .card-image.waves-effect.waves-block.waves-light
@@ -176,6 +224,14 @@ html(lang='en')
                     | Comentarios:
                     i.material-icons.right close
                   p Se el primero en comentar.
+                  form.col.s12
+                    .row
+                      .input-field.col.s12
+                        textarea#comentario.materialize-textarea(data-length='300')
+                        label(for='comentario') Textarea
+                    button.btn.waves-effect.waves-light(type='submit', name='action')
+                      | Comentar
+                      i.material-icons.right send
           .row
             .col.m5.m1
               .card
@@ -190,6 +246,14 @@ html(lang='en')
                     | Comentarios:
                     i.material-icons.right close
                   p Se el primero en comentar.
+                  form.col.s12
+                    .row
+                      .input-field.col.s12
+                        textarea#comentario.materialize-textarea(data-length='300')
+                        label(for='comentario') Textarea
+                    button.btn.waves-effect.waves-light(type='submit', name='action')
+                      | Comentar
+                      i.material-icons.right send
             .col.m7.m1
               .card
                 .card-image.waves-effect.waves-block.waves-light
@@ -203,6 +267,14 @@ html(lang='en')
                     | Comentarios:
                     i.material-icons.right close
                   p Se el primero en comentar.
+                  form.col.s12
+                    .row
+                      .input-field.col.s12
+                        textarea#comentario.materialize-textarea(data-length='300')
+                        label(for='comentario') Textarea
+                    button.btn.waves-effect.waves-light(type='submit', name='action')
+                      | Comentar
+                      i.material-icons.right send
       // Contenedor del footer
       .page-footer
     .left-sidebar-hover
