@@ -36,7 +36,7 @@ db.get("SELECT name FROM sqlite_master WHERE type='table' AND name='t_usuarios'"
     });
   }
   else {
-    console.log("Fallo al crear la tabla t_usuarios");
+    console.log("Tabla t_usuarios ya está creada");
   }
 });
 
@@ -56,6 +56,9 @@ app.get('/', function(req, res) {
 
 app.get('/login', function(req, res) {
 
+  res.render('login.jade', {title: "login"})
+  res.send(200, html);
+/*
   db.all('SELECT * FROM t_usuarios ORDER BY id', function(err, row) {
     if(err !== null) {
       res.status(500).send("Ocurrio el error: " + err)
@@ -66,7 +69,7 @@ app.get('/login', function(req, res) {
         res.send(200, html);
       });
     }
-  });
+  }); */
 });
 
 app.get('/registrarse', function(req, res) {
@@ -84,7 +87,7 @@ app.get('/registrarse', function(req, res) {
   });
 });
 
-// We define a new route that will handle bookmark creation
+// Definimos una ruta para la creación de usuarios
 app.post('/add', function(req, res) {
   console.log("Entro en el post/add")
   email = req.body.email;
@@ -102,6 +105,32 @@ app.post('/add', function(req, res) {
       res.redirect('back');
     }
   });
+});
+
+// Definimos una ruta para hacer el login de usuarios
+app.post('/login', function(req, res) {
+  console.log("Entro en el post/login")
+  username = req.body.username;
+  password = req.body.password;
+  console.log("Username: " + username)
+
+  //sqlUsername = db.run("SELECT * FROM 't_usuarios' WHERE username = '$username'");
+  //sqlPassword = "SELECT * FROM 't_usuarios' WHERE password = '$password'";
+  db.each("SELECT * FROM t_usuarios WHERE username='" + req.body.username + "'", function(err, row) {
+    if(err !== null) {
+      next(err);
+    }
+    else if (username == row.username) {
+      console.log("sqlUsername_db: " + row.username)
+      res.render('index_login.jade', {title: 'index_login'});
+    }
+    else if (username != row.username) {
+      console.log("Usuario no encontrado")
+    }
+  });
+  //console.log("sqlUsername 2: " + $sqlUsername)
+//  if (username == sqlUsername)
+//    res.render('index_login.jade', {title: 'index_login'})
 });
 
 // We define another route that will handle bookmark deletion
