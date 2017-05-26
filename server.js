@@ -80,6 +80,13 @@ app.get('/chat', function(req, res) {
   res.send(200, html);
 });
 
+// Definimos una ruta para hacer el logout de usuarios
+app.get('/logout', function(req, res) {
+  //delete req.session.user;
+  res.render('index.jade', {title: "index"})
+  res.send(200, html);
+});
+
 // Definimos una ruta para la creación de usuarios
 app.post('/add', function(req, res) {
   console.log("Entro en el post/add")
@@ -113,13 +120,6 @@ app.post('/login', function(req, res) {
             console.log("Usuario no encontrado")
             res.render('login_error.jade', {title: "login_error"})
       });
-});
-
-// Definimos una ruta para hacer el logout de usuarios
-app.get('/logout', function(req, res) {
-  //delete req.session.user;
-  res.render('index.jade', {title: "index"})
-  res.send(200, html);
 });
 
 // We define another route that will handle bookmark deletion

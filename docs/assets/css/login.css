@@ -17,6 +17,11 @@ h1 { color: #636363; }
 
 h3 { color: #4a89dc; }
 
+h2 {
+	font-size: 20px;
+	color: #f35f5f;
+}
+
 form {
 	width: 380px;
 	margin: 4em auto;
