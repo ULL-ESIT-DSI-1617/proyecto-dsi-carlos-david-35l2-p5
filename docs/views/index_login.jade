@@ -59,7 +59,7 @@ html(lang='es')
                 span.chapter-title Anonymous Pictures
             ul.right.col.s9.m3.nav-right-menu
               li
-                a.chat-button.show-on-large(href='javascript:void(0)', data-activates='chat-sidebar')
+                a.chat-button.show-on-large(href='logout')
                   i.material-icons power_settings_new
       aside#slide-out.side-nav.white.fixed
         .side-nav-wrapper
@@ -78,12 +78,12 @@ html(lang='es')
                 | login
             li.no-padding
             li.no-padding.active
-              a.waves-effect.waves-grey.active(href='registrarse')
+              a.waves-effect.waves-grey.active(href='/registrarse')
                 i.material-icons input
                 | crear cuenta
             li.no-padding
             li.no-padding.active
-              a.waves-effect.waves-grey.active(href='chat')
+              a.waves-effect.waves-grey.active(href='/chat')
                 i.material-icons face
                 | chat
             li.no-padding
