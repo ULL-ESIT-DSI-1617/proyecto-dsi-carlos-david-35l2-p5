@@ -55,21 +55,8 @@ app.get('/', function(req, res) {
 });
 
 app.get('/login', function(req, res) {
-
   res.render('login.jade', {title: "login"})
   res.send(200, html);
-/*
-  db.all('SELECT * FROM t_usuarios ORDER BY id', function(err, row) {
-    if(err !== null) {
-      res.status(500).send("Ocurrio el error: " + err)
-    }
-    else {
-      console.log(row);
-      res.render('login.jade', {t_usuarios: row}, function(err, html) {
-        res.send(200, html);
-      });
-    }
-  }); */
 });
 
 app.get('/registrarse', function(req, res) {
@@ -85,6 +72,12 @@ app.get('/registrarse', function(req, res) {
       });
     }
   });
+});
+
+// Ruta para el chat
+app.get('/chat', function(req, res) {
+  res.render('chat.jade', {title: "chat"})
+  res.send(200, html);
 });
 
 // Definimos una ruta para la creación de usuarios

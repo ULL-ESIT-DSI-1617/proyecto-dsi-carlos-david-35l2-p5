@@ -58,11 +58,6 @@ html(lang='es')
             a(href='/')
               .header-title.col.s3.m3
                 span.chapter-title Anonymous Pictures
-            //
-              BOTON DE CERRAR SESION
-              <ul class="right col s9 m3 nav-right-menu">
-              <li><a href="javascript:void(0)" data-activates="chat-sidebar" class="chat-button show-on-large"><i class="material-icons">power_settings_new</i></a></li>
-              </ul>
       aside#slide-out.side-nav.white.fixed
         .side-nav-wrapper
           // logo
@@ -75,7 +70,7 @@ html(lang='es')
                 | INICIO
             li.no-padding
             li.no-padding.active
-              a.waves-effect.waves-grey.active(href='#')
+              a.waves-effect.waves-grey.active(href='login')
                 i.material-icons person_pin
                 | login
             li.no-padding
@@ -85,7 +80,7 @@ html(lang='es')
                 | crear cuenta
             li.no-padding
             li.no-padding.active
-              a.waves-effect.waves-grey.active(href='chat')
+              a.waves-effect.waves-grey.active(href='#')
                 i.material-icons face
                 | chat
             li.no-padding
@@ -93,7 +88,7 @@ html(lang='es')
             p.copyright
               | © 2017
               br
-              | Carlos Fernandez Donate
+              | Carlos Fernandez
               br
               |  David Dorta Acosta
             a(href='/#!') Privacy
@@ -102,36 +97,23 @@ html(lang='es')
       main.mn-inner.inner-active-sidebar
         // Contenedor del cuerpo de la pagina
         .middle-content
-          .slider.fullscreen
-            ul.slides
+          .row
+            ul.slider.fullscree
               li
-                img(src='https://images.unsplash.com/photo-1464817739973-0128fe77aaa1?dpr=1&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=')
-                // random image
-                .caption.center-align
-                  form(action="login", method="post")
-                    .group
-                      input(type='text', name='username')
-                      span.highlight
-                      span.bar
-                      label
-                        i.material-icons perm_identity
-                        | Usuario
-                    .group
-                      input(type='password', name='password')
-                      span.highlight
-                      span.bar
-                      label
-                        i.material-icons unlock
-                        | Contraseña
-                    button.button.buttonBlue(type='submit')
-                      | login
-                      .ripples.buttonRipples
-                        span.ripplesCircle
+                .caption.left-align
+                  .col-sm-6
+                    br
+                    br
+                    input#nombreInput.form-control(type='text', placeholder='Nombre')
+                    input#mensajeInput.form-control(type='text', placeholder='Mensaje')
+                    #mensaje.copyright
       // Contenedor del footer
       .page-footer
     .left-sidebar-hover
     // Javascripts
     script(src='assets/plugins/jquery/jquery-2.2.0.min.js')
+    script(src='https://cdn.firebase.com/js/client/2.2.1/firebase.js')
+    script(src='assets/js/chat.js')
     script(src='assets/plugins/materialize/js/materialize.min.js')
     script(src='assets/plugins/material-preloader/js/materialPreloader.min.js')
     script(src='assets/plugins/jquery-blockui/jquery.blockui.js')
@@ -148,4 +130,4 @@ html(lang='es')
     script(src='assets/plugins/peity/jquery.peity.min.js')
     script(src='assets/js/alpha.min.js')
     script(src='assets/js/pages/dashboard.js')
-    script(src='js/login.js')
+    script(src='assets/js/login.js')
