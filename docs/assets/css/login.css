@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-hgroup { 
+hgroup {
 	text-align:center;
 	margin-top: 4em;
 }
@@ -17,6 +17,11 @@ h1 { color: #636363; }
 
 h3 { color: #4a89dc; }
 
+h2 {
+	font-size: 20px;
+	color: #f35f5f;
+}
+
 form {
 	width: 380px;
 	margin: 4em auto;
@@ -26,9 +31,9 @@ form {
 	box-shadow: rgba(0,0,0,0.14902) 0px 1px 1px 0px,rgba(0,0,0,0.09804) 0px 1px 2px 0px;
 }
 
-.group { 
-	position: relative; 
-	margin-bottom: 45px; 
+.group {
+	position: relative;
+	margin-bottom: 45px;
 }
 
 input {
@@ -50,13 +55,13 @@ input:focus { outline: none; }
 /* Label */
 
 label {
-	color: #999; 
+	color: #999;
 	font-size: 18px;
 	font-weight: normal;
 	position: absolute;
 	pointer-events: none;
-	left: 5px;
-	top: 10px;
+	left: 2px;
+	top: -20px;
 	-webkit-transition:all 0.2s ease;
 	transition: all 0.2s ease;
 }
@@ -83,12 +88,12 @@ input:focus ~ label, input.used ~ label {
 
 .bar:before, .bar:after {
 	content: '';
-	height: 2px; 
+	height: 2px;
 	width: 0;
-	bottom: 1px; 
+	bottom: 1px;
 	position: absolute;
-	background: #4a89dc; 
-	-webkit-transition:all 0.2s ease; 
+	background: #4a89dc;
+	-webkit-transition:all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
@@ -106,9 +111,9 @@ input:focus ~ .bar:before, input:focus ~ .bar:after { width: 50%; }
 
 .highlight {
 	position: absolute;
-	height: 60%; 
-	width: 100px; 
-	top: 25%; 
+	height: 60%;
+	width: 100px;
+	top: 25%;
 	left: 0;
 	pointer-events: none;
 	opacity: 0.5;

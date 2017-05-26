@@ -1,0 +1,30 @@
+{
+  "name": "proyecto-dsi-carlos-david-35l2-p5",
+  "version": "1.0.0",
+  "description": "Proyecto Final DSI - Blog de Fotografía Anónima",
+  "main": "server.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "jade": "^1.11.0",
+    "sqlite3": "^3.1.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ULL-ESIT-DSI-1617/proyecto-dsi-carlos-david-35l2-p5.git"
+  },
+  "author": "Carlos Fernandez Donate y David Dorta Acosta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ULL-ESIT-DSI-1617/proyecto-dsi-carlos-david-35l2-p5/issues"
+  },
+  "homepage": "https://github.com/ULL-ESIT-DSI-1617/proyecto-dsi-carlos-david-35l2-p5#readme"
+}
