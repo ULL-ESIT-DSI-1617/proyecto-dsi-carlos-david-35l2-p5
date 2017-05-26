@@ -58,11 +58,7 @@ html(lang='es')
             a(href='/')
               .header-title.col.s3.m3
                 span.chapter-title Anonymous Pictures
-            //
-              BOTON DE CERRAR SESION
-              <ul class="right col s9 m3 nav-right-menu">
-              <li><a href="javascript:void(0)" data-activates="chat-sidebar" class="chat-button show-on-large"><i class="material-icons">power_settings_new</i></a></li>
-              </ul>
+
       aside#slide-out.side-nav.white.fixed
         .side-nav-wrapper
           // logo
@@ -107,14 +103,14 @@ html(lang='es')
               li
                 img(src='data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==', style='background-image: url("https://ununsplash.imgix.net/photo-1414849424631-8b18529a81ca?q=75&fm=jpg&s=0e993004a2f3704e8f2ad5469315ccb7");')
                 .caption.center-align
-                  form(action="add", method="post")
+                  form(action="add", method="post", onsubmit='return validacion()')
                     .group
                       input(type='mail', name='email')
                       span.highlight
                       span.bar
                       label
                         i.tiny.material-icons email
-                        | Email
+                        | email
                     .group
                       input(type='text', name='username')
                       span.highlight
@@ -123,21 +119,20 @@ html(lang='es')
                         i.tiny.material-icons perm_identity
                         | Nombre de Usuario
                     .group
-                      input(type='password', name='password')
+                      input#password(type='password', name='password', required='')
                       span.highlight
                       span.bar
                       label
                         i.tiny.material-icons lock
                         | Contraseña
                     .group
-                      input(type='password', name='psw2')
+                      input#password2(type='password', name='password2', required='')
                       span.highlight
                       span.bar
                       label
                         i.tiny.material-icons lock
                         | Confirmar contraseña
-                    input(type='submit', value='Registrarse')
-                    button.button.buttonBlue(type='button')
+                    button.button.buttonBlue(type='submit')
                       | Registrarse
                       .ripples.buttonRipples
                         span.ripplesCircle
@@ -146,6 +141,7 @@ html(lang='es')
     .left-sidebar-hover
     // Javascripts
     script(src='assets/plugins/jquery/jquery-2.2.0.min.js')
+    script(src='assets/js/form.js')
     script(src='assets/plugins/materialize/js/materialize.min.js')
     script(src='assets/plugins/material-preloader/js/materialPreloader.min.js')
     script(src='assets/plugins/jquery-blockui/jquery.blockui.js')

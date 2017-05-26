@@ -115,6 +115,13 @@ app.post('/login', function(req, res) {
       });
 });
 
+// Definimos una ruta para hacer el logout de usuarios
+app.get('/logout', function(req, res) {
+  //delete req.session.user;
+  res.render('index.jade', {title: "index"})
+  res.send(200, html);
+});
+
 // We define another route that will handle bookmark deletion
 app.get('/delete/:id', function(req, res, next) {
   db.run("DELETE FROM t_usuarios WHERE id='" + req.params.id + "'",
