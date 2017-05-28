@@ -58,6 +58,18 @@ html(lang='es')
               .header-title.col.s3.m3
                 span.chapter-title Anonymous Pictures
 
+              form#uploadForm(enctype='multipart/form-data', action='/api/photo', method='post')
+                    .file-field.input-field
+                      .btn.waves-effect.waves-light(type='submit', value='Upload Image', name='submit')
+                        | Subir
+                    .file-field.input-field
+                      .btn
+                        span Foto
+                        input(type='file', name='userPhoto')
+                      .file-path-wrapper
+                        input.file-path.validate(type='text')
+                  span#status
+
       aside#slide-out.side-nav.white.fixed
         .side-nav-wrapper
           // logo
@@ -100,21 +112,34 @@ html(lang='es')
           .row
             .col.m5.m1
               .card
-                .card-image.waves-effect.waves-block.waves-light
-                  img.activator(src='assets/images/photo_4.jpg')
-                .card-content
-                  span.card-title.activator.grey-text.text-darken-4
-                    | Titulo
-                    i.material-icons.right more_vert
-
-            .col.m6.m1
+                form#uploadForm(enctype='multipart/form-data', action='/api/photo', method='post')
+                  input(type='file', name='userPhoto')
+                  input(type='submit', value='Upload Image', name='submit')
+                  span#status
+            .col.m5.m1
               .card
-                .card-image.waves-effect.waves-block.waves-light
-                  img.activator(src='assets/images/photo_8.jpg')
-                .card-content
-                  span.card-title.activator.grey-text.text-darken-4
-                    | Titulo
-                    i.material-icons.right more_vert
+                img(src='/uploads/userPhoto-1495986887800')
+
+          - for (var i = 0; i < 3; ++i) {
+            .row
+              .col.m5.m1
+                .card
+                  .card-image.waves-effect.waves-block.waves-light
+                    img.activator(src='assets/images/photo_4.jpg')
+                  .card-content
+                    span.card-title.activator.grey-text.text-darken-4
+                      | Titulo
+                      i.material-icons.right more_vert
+
+              .col.m5.m1
+                .card
+                  .card-image.waves-effect.waves-block.waves-light
+                    img.activator(src='assets/images/photo_8.jpg')
+                  .card-content
+                    span.card-title.activator.grey-text.text-darken-4
+                      | Titulo
+                      i.material-icons.right more_vert
+          - }
 
           .row
             .col.m6.m1
@@ -194,3 +219,5 @@ html(lang='es')
     script(src='assets/plugins/peity/jquery.peity.min.js')
     script(src='assets/js/alpha.min.js')
     script(src='assets/js/pages/dashboard.js')
+    script(src='http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js')
+    script(src='js/login.js')
