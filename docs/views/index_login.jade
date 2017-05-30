@@ -108,7 +108,15 @@ html(lang='es')
                   span.card-title.grey-text.text-darken-4
                     | Formulario Nuevo post:
                     i.material-icons.right close
-                  | formulario aqui
+                  form#formulario_new_picture
+                    .form-group
+                      label(for='articulo') Titulo
+                      input#titulo.form-control(type='text', placeholder='Nombre de la foto')
+                    .form-group
+                      label(for='imagen') Elegir Imagen
+                      input#imagen(type='file')
+                      p.help-block Elija una imagen para este artículo
+                    button#botonGuardar.btn.btn-primary(type='button', disabled='disabled') Guardar
           .row
             .col.s7.offset-s4
               .card
@@ -127,6 +135,9 @@ html(lang='es')
       .page-footer
     .left-sidebar-hover
     // Javascripts
+    script(src='https://www.gstatic.com/firebasejs/3.7.5/firebase.js')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    script(src='assets/js/subir_imagen.js')
     script(src='assets/plugins/jquery/jquery-2.2.0.min.js')
     script(src='assets/plugins/materialize/js/materialize.min.js')
     script(src='assets/plugins/material-preloader/js/materialPreloader.min.js')
