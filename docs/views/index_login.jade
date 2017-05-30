@@ -59,27 +59,11 @@ html(lang='es')
               .header-title.col.s3.m3
                 span.chapter-title Anonymous Pictures
 
-              form(action='#')
-                .col.s1
-                  .file-field.input-field
-                    .btn.waves-effect.waves-light(type='submit', name='action')
-                      | Subir
-                      i.material-icons.right send
-                .col.s5
-                  .file-field.input-field
-                    .btn
-                      span Foto
-                      input(type='file')
-                    .file-path-wrapper
-                      input.file-path.validate(type='text')
 
             ul.right.col.s9.m3.nav-right-menu
               li
-<<<<<<< HEAD
                 a.waves-effect.waves-grey.active(href='/')
-=======
                 a.waves-effect(href='/')
->>>>>>> master
                   i.material-icons power_settings_new
 
       aside#slide-out.side-nav.white.fixed
@@ -112,7 +96,21 @@ html(lang='es')
         // Contenedor del cuerpo de la pagina
         .middle-content
           .row
-            .col.m5.m1
+            .col.s5.offset-s5
+              .card
+                .card-image.waves-effect.waves-block.waves-light
+                  img.activator(src='assets/images/new_photo.png')
+                .card-content
+                  span.card-title.activator.grey-text.text-darken-4
+                    | Subir Foto
+                    i.material-icons.right more_vert
+                .card-reveal
+                  span.card-title.grey-text.text-darken-4
+                    | Formulario Nuevo post:
+                    i.material-icons.right close
+                  | formulario aqui
+          .row
+            .col.s7.offset-s4
               .card
                 .card-image.waves-effect.waves-block.waves-light
                   img.activator(src='assets/images/photo_4.jpg')
@@ -124,101 +122,7 @@ html(lang='es')
                   span.card-title.grey-text.text-darken-4
                     | Comentarios:
                     i.material-icons.right close
-                  p Se el primero en comentar.
-            .col.m6.m1
-              .card
-                .card-image.waves-effect.waves-block.waves-light
-                  img.activator(src='assets/images/photo_8.jpg')
-                .card-content
-                  span.card-title.activator.grey-text.text-darken-4
-                    | Titulo
-                    i.material-icons.right more_vert
-                .card-reveal
-                  span.card-title.grey-text.text-darken-4
-                    | Comentarios:
-                    i.material-icons.right close
-                  p Se el primero en comentar.
-          .row
-            .col.m6.m1
-              .card
-                .card-image.waves-effect.waves-block.waves-light
-                  img.activator(src='assets/images/photo_6.jpg')
-                .card-content
-                  span.card-title.activator.grey-text.text-darken-4
-                    | Titulo
-                    i.material-icons.right more_vert
-                .card-reveal
-                  span.card-title.grey-text.text-darken-4
-                    | Comentarios:
-                    i.material-icons.right close
-                  p Se el primero en comentar.
-            .col.m6.m1
-              .card
-                .card-image.waves-effect.waves-block.waves-light
-                  img.activator(src='assets/images/photo_7.jpg')
-                .card-content
-                  span.card-title.activator.grey-text.text-darken-4
-                    | Titulo
-                    i.material-icons.right more_vert
-                .card-reveal
-                  span.card-title.grey-text.text-darken-4
-                    | Comentarios:
-                    i.material-icons.right close
-                  p Se el primero en comentar.
-          .row
-            .col.m6.m1
-              .card
-                .card-image.waves-effect.waves-block.waves-light
-                  img.activator(src='assets/images/photo_1.jpg')
-                .card-content
-                  span.card-title.activator.grey-text.text-darken-4
-                    | Titulo
-                    i.material-icons.right more_vert
-                .card-reveal
-                  span.card-title.grey-text.text-darken-4
-                    | Comentarios:
-                    i.material-icons.right close
-                  p Se el primero en comentar.
-            .col.m5.m1
-              .card
-                .card-image.waves-effect.waves-block.waves-light
-                  img.activator(src='assets/images/photo_2.jpg')
-                .card-content
-                  span.card-title.activator.grey-text.text-darken-4
-                    | Titulo
-                    i.material-icons.right more_vert
-                .card-reveal
-                  span.card-title.grey-text.text-darken-4
-                    | Comentarios:
-                    i.material-icons.right close
-                  p Se el primero en comentar.
-          .row
-            .col.m5.m1
-              .card
-                .card-image.waves-effect.waves-block.waves-light
-                  img.activator(src='assets/images/photo_3.jpg')
-                .card-content
-                  span.card-title.activator.grey-text.text-darken-4
-                    | Titulo
-                    i.material-icons.right more_vert
-                .card-reveal
-                  span.card-title.grey-text.text-darken-4
-                    | Comentarios:
-                    i.material-icons.right close
-                  p Se el primero en comentar.
-            .col.m7.m1
-              .card
-                .card-image.waves-effect.waves-block.waves-light
-                  img.activator(src='assets/images/photo_5.jpg')
-                .card-content
-                  span.card-title.activator.grey-text.text-darken-4
-                    | Titulo
-                    i.material-icons.right more_vert
-                .card-reveal
-                  span.card-title.grey-text.text-darken-4
-                    | Comentarios:
-                    i.material-icons.right close
-                  p Se el primero en comentar.
+                  | Se el primero en comentar.
       // Contenedor del footer
       .page-footer
     .left-sidebar-hover

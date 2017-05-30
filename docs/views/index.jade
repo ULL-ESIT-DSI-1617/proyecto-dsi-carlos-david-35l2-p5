@@ -58,19 +58,6 @@ html(lang='es')
             a(href='/')
               .header-title.col.s3.m3
                 span.chapter-title Anonymous Pictures
-
-              form#uploadForm(enctype='multipart/form-data', action='/api/photo', method='post')
-                    .file-field.input-field
-                      .btn.waves-effect.waves-light(type='submit', value='Upload Image', name='submit')
-                        | Subir
-                    .file-field.input-field
-                      .btn
-                        span Foto
-                        input(type='file', name='userPhoto')
-                      .file-path-wrapper
-                        input.file-path.validate(type='text')
-                  span#status
-
       aside#slide-out.side-nav.white.fixed
         .side-nav-wrapper
           // logo
@@ -111,129 +98,32 @@ html(lang='es')
         // Contenedor del cuerpo de la pagina
         .middle-content
           .row
-            .col.m5.m1
+            .col.s5.offset-s5
               .card
-<<<<<<< HEAD
-                form#uploadForm(enctype='multipart/form-data', action='/api/photo', method='post')
-                  input(type='file', name='userPhoto')
-                  input(type='submit', value='Upload Image', name='submit')
-                  span#status
-            .col.m5.m1
+                .card-image.waves-effect.waves-block.waves-light
+                  img.activator(src='assets/images/new_photo.png')
+                .card-content
+                  span.card-title.activator.grey-text.text-darken-4
+                    | Subir Foto
+                    i.material-icons.right more_vert
+                .card-reveal
+                  span.card-title.grey-text.text-darken-4
+                    | Formulario Nuevo post:
+                    i.material-icons.right close
+                  | Formulario aqui
+          .row
+            .col.s7.offset-s4
               .card
-                img(src='/uploads/userPhoto-1495986887800')
-
-          - for (var i = 0; i < 3; ++i) {
-            .row
-              .col.m5.m1
-                .card
-                  .card-image.waves-effect.waves-block.waves-light
-                    img.activator(src='assets/images/photo_4.jpg')
-                  .card-content
-                    span.card-title.activator.grey-text.text-darken-4
-                      | Titulo
-                      i.material-icons.right more_vert
-
-              .col.m5.m1
-                .card
-                  .card-image.waves-effect.waves-block.waves-light
-                    img.activator(src='assets/images/photo_8.jpg')
-                  .card-content
-                    span.card-title.activator.grey-text.text-darken-4
-                      | Titulo
-                      i.material-icons.right more_vert
-          - }
-
-=======
                 .card-image.waves-effect.waves-block.waves-light
                   img.activator(src='assets/images/photo_4.jpg')
                 .card-content
                   span.card-title.activator.grey-text.text-darken-4
                     | Titulo
                     i.material-icons.right more_vert
-            .col.m6.m1
-              .card
-                .card-image.waves-effect.waves-block.waves-light
-                  img.activator(src='assets/images/photo_8.jpg')
-                .card-content
-                  span.card-title.activator.grey-text.text-darken-4
-                    | Titulo
-                    i.material-icons.right more_vert
->>>>>>> master
-          .row
-            .col.m6.m1
-              .card
-                .card-image.waves-effect.waves-block.waves-light
-                  img.activator(src='assets/images/photo_6.jpg')
-                .card-content
-                  span.card-title.activator.grey-text.text-darken-4
-                    | Titulo
-                    i.material-icons.right more_vert
-<<<<<<< HEAD
 
-=======
->>>>>>> master
-            .col.m6.m1
-              .card
-                .card-image.waves-effect.waves-block.waves-light
-                  img.activator(src='assets/images/photo_7.jpg')
-                .card-content
-                  span.card-title.activator.grey-text.text-darken-4
-                    | Titulo
-                    i.material-icons.right more_vert
-<<<<<<< HEAD
 
-=======
->>>>>>> master
-          .row
-            .col.m6.m1
-              .card
-                .card-image.waves-effect.waves-block.waves-light
-                  img.activator(src='assets/images/photo_1.jpg')
-                .card-content
-                  span.card-title.activator.grey-text.text-darken-4
-                    | Titulo
-                    i.material-icons.right more_vert
-<<<<<<< HEAD
 
-=======
->>>>>>> master
-            .col.m5.m1
-              .card
-                .card-image.waves-effect.waves-block.waves-light
-                  img.activator(src='assets/images/photo_2.jpg')
-                .card-content
-                  span.card-title.activator.grey-text.text-darken-4
-                    | Titulo
-                    i.material-icons.right more_vert
-<<<<<<< HEAD
 
-=======
->>>>>>> master
-          .row
-            .col.m5.m1
-              .card
-                .card-image.waves-effect.waves-block.waves-light
-                  img.activator(src='assets/images/photo_3.jpg')
-                .card-content
-                  span.card-title.activator.grey-text.text-darken-4
-                    | Titulo
-                    i.material-icons.right more_vert
-<<<<<<< HEAD
-
-=======
->>>>>>> master
-            .col.m7.m1
-              .card
-                .card-image.waves-effect.waves-block.waves-light
-                  img.activator(src='assets/images/photo_5.jpg')
-                .card-content
-                  span.card-title.activator.grey-text.text-darken-4
-                    | Titulo
-                    i.material-icons.right more_vert
-<<<<<<< HEAD
-
-=======
->>>>>>> master
       // Contenedor del footer
       .page-footer
     .left-sidebar-hover
