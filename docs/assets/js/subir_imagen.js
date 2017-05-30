@@ -60,8 +60,10 @@ $(document).ready(function()
 
     $("#botonGuardar").click(function()
     {
+        var f = new Date();
         titulo=$("#titulo").val();
-        id=new Date().getUTCMilliseconds();
+        //id=new Date().getUTCMilliseconds();
+        id = ((f.getFullYear()).toString()).concat(((f.getMonth() +1).toString()).concat(((f.getDate()).toString()).concat((f.getUTCMilliseconds().toString()))));
         if (!imagen)
         {
             imagen="NONE";
