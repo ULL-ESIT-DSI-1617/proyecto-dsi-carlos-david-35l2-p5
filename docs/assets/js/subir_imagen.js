@@ -61,10 +61,14 @@ $(document).ready(function()
     $("#botonGuardar").click(function()
     {
         var f = new Date();
+        //var tmp;
         titulo=$("#titulo").val();
         //id=new Date().getUTCMilliseconds();
         id = ((f.getFullYear()).toString()).concat(((f.getMonth() +1).toString()).concat(((f.getDate()).toString()).concat(((f.getHours()).toString()).concat(((f.getMinutes()).toString()).concat(((f.getSeconds()).toString()).concat((f.getUTCMilliseconds().toString())))))));
+        //tmp = (f.getFullYear())+((f.getMonth() +1))+(f.getDate())+(f.getHours())+(f.getMinutes())+(f.getSeconds())+(f.getUTCMilliseconds());
+        //id = Number.MAX_SAFE_INTEGER - tmp ;
         //id = ((f.getUTCMilliseconds()).toString()).concat(((f.getSeconds()).toString()).concat(((f.getMinutes().toString()).concat(((f.getHours()).toString()).concat(((f.getDate()).toString()).concat(((f.getMonth()+1).toString()).concat((f.getFullYear().toString()))))))));
+        //id = ???
 
         if (!imagen)
         {
