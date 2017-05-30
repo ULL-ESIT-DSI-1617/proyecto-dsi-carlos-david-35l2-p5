@@ -58,7 +58,6 @@ html(lang='es')
             a(href='/')
               .header-title.col.s3.m3
                 span.chapter-title Anonymous Pictures
-
       aside#slide-out.side-nav.white.fixed
         .side-nav-wrapper
           // logo
@@ -99,7 +98,21 @@ html(lang='es')
         // Contenedor del cuerpo de la pagina
         .middle-content
           .row
-            .col.m5.m1
+            .col.s5.offset-s5
+              .card
+                .card-image.waves-effect.waves-block.waves-light
+                  img.activator(src='assets/images/new_photo.png')
+                .card-content
+                  span.card-title.activator.grey-text.text-darken-4
+                    | Subir Foto
+                    i.material-icons.right more_vert
+                .card-reveal
+                  span.card-title.grey-text.text-darken-4
+                    | Formulario Nuevo post:
+                    i.material-icons.right close
+                  | Formulario aqui
+          .row
+            .col.s7.offset-s4
               .card
                 .card-image.waves-effect.waves-block.waves-light
                   img.activator(src='assets/images/photo_4.jpg')
@@ -107,65 +120,10 @@ html(lang='es')
                   span.card-title.activator.grey-text.text-darken-4
                     | Titulo
                     i.material-icons.right more_vert
-            .col.m6.m1
-              .card
-                .card-image.waves-effect.waves-block.waves-light
-                  img.activator(src='assets/images/photo_8.jpg')
-                .card-content
-                  span.card-title.activator.grey-text.text-darken-4
-                    | Titulo
-                    i.material-icons.right more_vert
-          .row
-            .col.m6.m1
-              .card
-                .card-image.waves-effect.waves-block.waves-light
-                  img.activator(src='assets/images/photo_6.jpg')
-                .card-content
-                  span.card-title.activator.grey-text.text-darken-4
-                    | Titulo
-                    i.material-icons.right more_vert
-            .col.m6.m1
-              .card
-                .card-image.waves-effect.waves-block.waves-light
-                  img.activator(src='assets/images/photo_7.jpg')
-                .card-content
-                  span.card-title.activator.grey-text.text-darken-4
-                    | Titulo
-                    i.material-icons.right more_vert
-          .row
-            .col.m6.m1
-              .card
-                .card-image.waves-effect.waves-block.waves-light
-                  img.activator(src='assets/images/photo_1.jpg')
-                .card-content
-                  span.card-title.activator.grey-text.text-darken-4
-                    | Titulo
-                    i.material-icons.right more_vert
-            .col.m5.m1
-              .card
-                .card-image.waves-effect.waves-block.waves-light
-                  img.activator(src='assets/images/photo_2.jpg')
-                .card-content
-                  span.card-title.activator.grey-text.text-darken-4
-                    | Titulo
-                    i.material-icons.right more_vert
-          .row
-            .col.m5.m1
-              .card
-                .card-image.waves-effect.waves-block.waves-light
-                  img.activator(src='assets/images/photo_3.jpg')
-                .card-content
-                  span.card-title.activator.grey-text.text-darken-4
-                    | Titulo
-                    i.material-icons.right more_vert
-            .col.m7.m1
-              .card
-                .card-image.waves-effect.waves-block.waves-light
-                  img.activator(src='assets/images/photo_5.jpg')
-                .card-content
-                  span.card-title.activator.grey-text.text-darken-4
-                    | Titulo
-                    i.material-icons.right more_vert
+
+
+
+
       // Contenedor del footer
       .page-footer
     .left-sidebar-hover
@@ -187,3 +145,5 @@ html(lang='es')
     script(src='assets/plugins/peity/jquery.peity.min.js')
     script(src='assets/js/alpha.min.js')
     script(src='assets/js/pages/dashboard.js')
+    script(src='http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js')
+    script(src='js/login.js')

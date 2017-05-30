@@ -4,6 +4,16 @@ var http = require('http'),
     sqlite3 = require('sqlite3').verbose(),
     bodyParser = require('body-parser'),
     db = new sqlite3.Database('docs/anonymous.db');
+var multer	=	require('multer');
+var storage	=	multer.diskStorage({
+  destination: function (req, file, callback) {
+    callback(null, './docs/uploads');
+  },
+  filename: function (req, file, callback) {
+    callback(null, file.fieldname + '-' + Date.now());
+  }
+});
+var upload = multer({ storage : storage}).single('userPhoto');
 
 app.use(express.static(__dirname + "/docs"));
 
@@ -52,6 +62,15 @@ app.get('/', function(req, res) {
       res.render('index.jade', {title: 'index'});
     }
   });
+});
+
+app.post('/api/photo',function(req,res){
+	upload(req,res,function(err) {
+		if(err) {
+			return res.end("Error uploading file.");
+		}
+		res.redirect('/');
+	});
 });
 
 app.get('/login', function(req, res) {
