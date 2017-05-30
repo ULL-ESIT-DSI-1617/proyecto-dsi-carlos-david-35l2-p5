@@ -59,6 +59,11 @@ html(lang='es')
             a(href='/')
               .header-title.col.s3.m3
                 span.chapter-title Anonymous Pictures
+            ul.right.col.s9.m3.nav-right-menu
+              li
+                a.waves-effect.waves-grey.active(href='/')
+                a.waves-effect(href='/')
+                  i.material-icons power_settings_new
       aside#slide-out.side-nav.white.fixed
         .side-nav-wrapper
           // logo
@@ -66,19 +71,9 @@ html(lang='es')
           // Menu lateral izquierdo
           ul.sidebar-menu.collapsible.collapsible-accordion(data-collapsible='accordion')
             li.no-padding.active
-              a.waves-effect.waves-grey.active(href='/')
+              a.waves-effect.waves-grey.active(href='#')
                 i.material-icons perm_media
                 | INICIO
-            li.no-padding
-            li.no-padding.active
-              a.waves-effect.waves-grey.active(href='login')
-                i.material-icons person_pin
-                | login
-            li.no-padding
-            li.no-padding.active
-              a.waves-effect.waves-grey.active(href='registrarse')
-                i.material-icons input
-                | crear cuenta
             li.no-padding
             li.no-padding.active
               a.waves-effect.waves-grey.active(href='#')
