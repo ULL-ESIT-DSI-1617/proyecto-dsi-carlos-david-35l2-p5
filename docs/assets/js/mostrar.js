@@ -21,7 +21,7 @@ $(document).ready(function()
     referencia.on('value',function(datos)
     {
         post=datos.val();
-        // Recorremos los productos y los mostramos
+        // Recorremos los post y los mostramos
         $.each(post, function(indice,valor)
         {
             var prevProducto='<div class="row">';
