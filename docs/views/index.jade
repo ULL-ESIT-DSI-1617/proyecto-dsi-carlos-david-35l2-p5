@@ -9,6 +9,8 @@ html(lang='es')
     meta(name='description', content='Proyecto final DSI ')
     meta(name='keywords', content='fotografia,pictures')
     meta(name='author', content='Carlos Fernandez Donate / David Dorta Acosta')
+    //script
+
     // Styles
     link(type='text/css', rel='stylesheet', href='assets/plugins/materialize/css/materialize.min.css')
     link(href='http://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
@@ -128,6 +130,7 @@ html(lang='es')
                   span.card-title.activator.grey-text.text-darken-4
                     | Titulo
                     i.material-icons.right more_vert
+          #listado.container-fluid
 
 
 
@@ -136,9 +139,11 @@ html(lang='es')
       .page-footer
     .left-sidebar-hover
     // Javascripts
+
     script(src='https://www.gstatic.com/firebasejs/3.7.5/firebase.js')
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
     script(src='assets/js/subir_imagen.js')
+    script(src='assets/js/mostrar.js')
     script(src='assets/plugins/jquery/jquery-2.2.0.min.js')
     script(src='assets/plugins/materialize/js/materialize.min.js')
     script(src='assets/plugins/material-preloader/js/materialPreloader.min.js')
@@ -157,4 +162,3 @@ html(lang='es')
     script(src='assets/js/alpha.min.js')
     script(src='assets/js/pages/dashboard.js')
     script(src='http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js')
-    script(src='js/login.js')
