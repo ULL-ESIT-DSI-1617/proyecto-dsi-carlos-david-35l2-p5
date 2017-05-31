@@ -3,11 +3,14 @@ html(lang='es')
   head
     // Title
     title Anonymous Pictures
+    link(rel='shortcut icon', href='assets/images/favicon-32x32.png')
     meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
     meta(charset='UTF-8')
     meta(name='description', content='Proyecto final DSI ')
     meta(name='keywords', content='fotografia,pictures')
     meta(name='author', content='Carlos Fernandez Donate / David Dorta Acosta')
+    //script
+
     // Styles
     link(type='text/css', rel='stylesheet', href='assets/plugins/materialize/css/materialize.min.css')
     link(href='http://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
@@ -57,7 +60,6 @@ html(lang='es')
             a(href='/')
               .header-title.col.s3.m3
                 span.chapter-title Anonymous Pictures
-
       aside#slide-out.side-nav.white.fixed
         .side-nav-wrapper
           // logo
@@ -79,11 +81,6 @@ html(lang='es')
                 i.material-icons input
                 | crear cuenta
             li.no-padding
-            li.no-padding.active
-              a.waves-effect.waves-grey.active(href='chat')
-                i.material-icons face
-                | chat
-            li.no-padding
           .footer
             p.copyright
               | © 2017
@@ -98,117 +95,42 @@ html(lang='es')
         // Contenedor del cuerpo de la pagina
         .middle-content
           .row
-            .col.m5.m1
+            .col.s5.offset-s5
               .card
                 .card-image.waves-effect.waves-block.waves-light
-                  img.activator(src='assets/images/photo_4.jpg')
+                  img.activator(src='assets/images/new_photo.png')
                 .card-content
                   span.card-title.activator.grey-text.text-darken-4
-                    | Titulo
+                    | Subir Foto
                     i.material-icons.right more_vert
                 .card-reveal
                   span.card-title.grey-text.text-darken-4
-                    | Comentarios:
+                    | Formulario Nuevo post:
                     i.material-icons.right close
-                  p Se el primero en comentar.
-            .col.m6.m1
-              .card
-                .card-image.waves-effect.waves-block.waves-light
-                  img.activator(src='assets/images/photo_8.jpg')
-                .card-content
-                  span.card-title.activator.grey-text.text-darken-4
-                    | Titulo
-                    i.material-icons.right more_vert
-                .card-reveal
-                  span.card-title.grey-text.text-darken-4
-                    | Comentarios:
-                    i.material-icons.right close
-                  p Se el primero en comentar.
-          .row
-            .col.m6.m1
-              .card
-                .card-image.waves-effect.waves-block.waves-light
-                  img.activator(src='assets/images/photo_6.jpg')
-                .card-content
-                  span.card-title.activator.grey-text.text-darken-4
-                    | Titulo
-                    i.material-icons.right more_vert
-                .card-reveal
-                  span.card-title.grey-text.text-darken-4
-                    | Comentarios:
-                    i.material-icons.right close
-                  p Se el primero en comentar.
-            .col.m6.m1
-              .card
-                .card-image.waves-effect.waves-block.waves-light
-                  img.activator(src='assets/images/photo_7.jpg')
-                .card-content
-                  span.card-title.activator.grey-text.text-darken-4
-                    | Titulo
-                    i.material-icons.right more_vert
-                .card-reveal
-                  span.card-title.grey-text.text-darken-4
-                    | Comentarios:
-                    i.material-icons.right close
-                  p Se el primero en comentar.
-          .row
-            .col.m6.m1
-              .card
-                .card-image.waves-effect.waves-block.waves-light
-                  img.activator(src='assets/images/photo_1.jpg')
-                .card-content
-                  span.card-title.activator.grey-text.text-darken-4
-                    | Titulo
-                    i.material-icons.right more_vert
-                .card-reveal
-                  span.card-title.grey-text.text-darken-4
-                    | Comentarios:
-                    i.material-icons.right close
-                  p Se el primero en comentar.
-            .col.m5.m1
-              .card
-                .card-image.waves-effect.waves-block.waves-light
-                  img.activator(src='assets/images/photo_2.jpg')
-                .card-content
-                  span.card-title.activator.grey-text.text-darken-4
-                    | Titulo
-                    i.material-icons.right more_vert
-                .card-reveal
-                  span.card-title.grey-text.text-darken-4
-                    | Comentarios:
-                    i.material-icons.right close
-                  p Se el primero en comentar.
-          .row
-            .col.m5.m1
-              .card
-                .card-image.waves-effect.waves-block.waves-light
-                  img.activator(src='assets/images/photo_3.jpg')
-                .card-content
-                  span.card-title.activator.grey-text.text-darken-4
-                    | Titulo
-                    i.material-icons.right more_vert
-                .card-reveal
-                  span.card-title.grey-text.text-darken-4
-                    | Comentarios:
-                    i.material-icons.right close
-                  p Se el primero en comentar.
-            .col.m7.m1
-              .card
-                .card-image.waves-effect.waves-block.waves-light
-                  img.activator(src='assets/images/photo_5.jpg')
-                .card-content
-                  span.card-title.activator.grey-text.text-darken-4
-                    | Titulo
-                    i.material-icons.right more_vert
-                .card-reveal
-                  span.card-title.grey-text.text-darken-4
-                    | Comentarios:
-                    i.material-icons.right close
-                  p Se el primero en comentar.
+                  form#formulario_new_picture
+                    .form-group
+                      label(for='articulo') Titulo
+                      input#titulo.form-control(type='text', placeholder='Nombre de la foto')
+                    .form-group
+                      label(for='imagen') Elegir Imagen
+                      input#imagen(type='file')
+                      p.help-block Elija una imagen para este artículo
+                    button#botonGuardar.btn.btn-primary(type='button', disabled='disabled') Guardar
+
+          #listado.container-fluid
+
+
+
+
       // Contenedor del footer
       .page-footer
     .left-sidebar-hover
     // Javascripts
+
+    script(src='https://www.gstatic.com/firebasejs/3.7.5/firebase.js')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    script(src='assets/js/subir_imagen.js')
+    script(src='assets/js/mostrar.js')
     script(src='assets/plugins/jquery/jquery-2.2.0.min.js')
     script(src='assets/plugins/materialize/js/materialize.min.js')
     script(src='assets/plugins/material-preloader/js/materialPreloader.min.js')
@@ -226,3 +148,4 @@ html(lang='es')
     script(src='assets/plugins/peity/jquery.peity.min.js')
     script(src='assets/js/alpha.min.js')
     script(src='assets/js/pages/dashboard.js')
+    script(src='http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js')
