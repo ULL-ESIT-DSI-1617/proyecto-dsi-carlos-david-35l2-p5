@@ -4,16 +4,6 @@ var http = require('http'),
     sqlite3 = require('sqlite3').verbose(),
     bodyParser = require('body-parser'),
     db = new sqlite3.Database('docs/anonymous.db');
-var multer	=	require('multer');
-var storage	=	multer.diskStorage({
-  destination: function (req, file, callback) {
-    callback(null, './docs/uploads');
-  },
-  filename: function (req, file, callback) {
-    callback(null, file.fieldname + '-' + Date.now());
-  }
-});
-var upload = multer({ storage : storage}).single('userPhoto');
 
 app.use(express.static(__dirname + "/docs"));
 
@@ -26,7 +16,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-// Database initialization
+// Inicialización de la Base de Datos
 db.get("SELECT name FROM sqlite_master WHERE type='table' AND name='t_usuarios'", function(err, rows) {
   if(err !== null) {
     console.log(err);
@@ -48,29 +38,13 @@ db.get("SELECT name FROM sqlite_master WHERE type='table' AND name='t_usuarios'"
   else {
     console.log("Tabla t_usuarios ya está creada");
   }
+  console.log(rows);  //Mostramos por consola la base de datos
 });
 
-// We render the templates with the data
+
 app.get('/', function(req, res) {
-
-  db.all('SELECT * FROM t_usuarios ORDER BY id', function(err, row) {
-    if(err !== null) {
-      res.status(500).send("Ocurrio el error: " + err)
-    }
-    else {
-      console.log(row);
       res.render('index.jade', {title: 'index'});
-    }
-  });
-});
-
-app.post('/api/photo',function(req,res){
-	upload(req,res,function(err) {
-		if(err) {
-			return res.end("Error uploading file.");
-		}
-		res.redirect('/');
-	});
+      res.send(200, html);
 });
 
 app.get('/login', function(req, res) {
@@ -139,19 +113,6 @@ app.post('/login', function(req, res) {
             console.log("Usuario no encontrado")
             res.render('login_error.jade', {title: "login_error"})
       });
-});
-
-// We define another route that will handle bookmark deletion
-app.get('/delete/:id', function(req, res, next) {
-  db.run("DELETE FROM t_usuarios WHERE id='" + req.params.id + "'",
-         function(err) {
-    if(err !== null) {
-      next(err);
-    }
-    else {
-      res.redirect('back');
-    }
-  });
 });
 
 var port = process.env.PORT || 8081;
