@@ -63,12 +63,7 @@ $(document).ready(function()
         var f = new Date();
         //var tmp;
         titulo=$("#titulo").val();
-        //id=new Date().getUTCMilliseconds();
         id = ((f.getFullYear()).toString()).concat(((f.getMonth() +1).toString()).concat(((f.getDate()).toString()).concat(((f.getHours()).toString()).concat(((f.getMinutes()).toString()).concat(((f.getSeconds()).toString()).concat((f.getUTCMilliseconds().toString())))))));
-        //tmp = (f.getFullYear())+((f.getMonth() +1))+(f.getDate())+(f.getHours())+(f.getMinutes())+(f.getSeconds())+(f.getUTCMilliseconds());
-        //id = Number.MAX_SAFE_INTEGER - tmp ;
-        //id = ((f.getUTCMilliseconds()).toString()).concat(((f.getSeconds()).toString()).concat(((f.getMinutes().toString()).concat(((f.getHours()).toString()).concat(((f.getDate()).toString()).concat(((f.getMonth()+1).toString()).concat((f.getFullYear().toString()))))))));
-        //id = ???
 
         if (!imagen)
         {
@@ -84,19 +79,8 @@ $(document).ready(function()
         */
         var referencia=database.ref("post");
 
-
-        // De la siguiente forma el método sobreescribe los datos
-    /*
-        referencia.set(
-        {
-            titulo: titulo,
-            imagen: imagen
-        });
-        */
-
         // Ahora estamos poniendo el titulo como clave en la colección
         // De esta manera podremos añadir nuevos titulos o actualizar uno ya existente.
-
 
         referencia.child(id).set(
         {
@@ -107,21 +91,5 @@ $(document).ready(function()
         {
             alert('Su foto se a subido correctamente');
         });
-
-        // Si queremos permitir que hayas artículos con nombres duplicados entonces tendremos
-        // que decirle a Firebase que utilice otra clave en lugar del nombre del titulo.
-        // Usaremos el método push en lugar de set
-      /*  referencia.push(
-        {
-            id: new Date().getUTCMilliseconds(),
-            titulo: titulo,
-            fecha: timeStamp(),
-            imagen: imagen
-        },function()
-        {
-            alert('Su foto se a subido correctamente');
-        });
-        */
     });
-
 });
