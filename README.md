@@ -20,3 +20,9 @@
 
 **JavaScript**
 - Con esta tecnología nos permite tener las páginas de nuestro proyecto de manera dinámica, utilizando en la página principal tanto para subir fotos como para mostrarlas, en el chat del proyecto, y para la validación del formulario.
+
+## COMPONENTES DEL GRUPO
+
+* [Carlos Fernández Donate](https://charly-poket.github.io)
+
+* [David Dorta Acosta](https://alu0100851236.github.io/)
