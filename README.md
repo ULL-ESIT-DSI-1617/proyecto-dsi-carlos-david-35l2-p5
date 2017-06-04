@@ -21,7 +21,15 @@
 **JavaScript**
 - Con esta tecnología nos permite tener las páginas de nuestro proyecto de manera dinámica, utilizando en la página principal tanto para subir fotos como para mostrarlas, en el chat del proyecto, y para la validación del formulario.
 
-## COMPONENTES DEL GRUPO
+**HEROKU**
+- Desplegamos nuestro proyecto Express sobre Node.JS en Heroku
+
+# LINKS DESPLIEGUE
+
+* [IaaS (10.6.128.53:8081)](http://10.6.128.53:8081/)
+* [HEROKU](https://anonymous-pictures.herokuapp.com/)
+
+# COMPONENTES DEL GRUPO
 
 * [Carlos Fernández Donate](https://charly-poket.github.io)
 
