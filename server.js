@@ -38,7 +38,6 @@ db.get("SELECT name FROM sqlite_master WHERE type='table' AND name='t_usuarios'"
   else {
     console.log("Tabla t_usuarios ya está creada");
   }
-  console.log(rows);  //Mostramos por consola la base de datos
 });
 
 
