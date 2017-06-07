@@ -27,7 +27,7 @@
 # LINKS DESPLIEGUE
 
 * [IaaS (10.6.128.53:8081)](http://10.6.128.53:8081/)
-* [HEROKU](https://anonymous-pictures.herokuapp.com/)
+* [HEROKU](https://i.imgsafe.org/836d33d3c6.jpg)
 
 # COMPONENTES DEL GRUPO
 
